@@ -3,7 +3,7 @@ node {
          checkout scm
      }
      stage('Build image') {
-         app = docker.build("unn-project/webv0")
+         app = docker.build("ec2-13-125-13-234.ap-northeast-2.compute.amazonaws.com/unn-project/webv0")
          
      }
      stage('Push image') {
