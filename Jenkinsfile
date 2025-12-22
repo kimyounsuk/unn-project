@@ -3,7 +3,7 @@ node {
          checkout scm
      }
      stage('Build image') {
-         app = docker.build("unn-project/webv1")
+         app = docker.build("unn-project/webv0")
          
      }
      stage('Push image') {
