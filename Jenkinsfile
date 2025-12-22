@@ -1,15 +1,38 @@
-node {
-     stage('Clone repository') {
-         checkout scm
-     }
-     stage('Build image') {
-         app = docker.build("ec2-13-125-13-234.ap-northeast-2.compute.amazonaws.com/unn-project/webv0")
-         
-     }
-     stage('Push image') {
-         docker.withRegistry('https://ec2-13-125-13-234.ap-northeast-2.compute.amazonaws.com/', 'harbor-reg') {
-             app.push("${env.BUILD_NUMBER}")
-             app.push("latest")
-         }
-     }
+pipeline {
+    agent any
+
+    environment {
+        REGISTRY = "ec2-13-125-13-234.ap-northeast-2.compute.amazonaws.com"
+        PROJECT  = "unn-project"
+        IMAGE    = "webv0"
+        TAG      = "${env.BUILD_NUMBER}"
+    }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
+
+        stage('Build Image') {
+            steps {
+                script {
+                    app = docker.build("${REGISTRY}/${PROJECT}/${IMAGE}")
+                }
+            }
+        }
+
+        stage('Push Image') {
+            steps {
+                script {
+                    docker.withRegistry("https://${REGISTRY}", "harbor-reg") {
+                        app.push(TAG)
+                        app.push("latest")
+                    }
+                }
+            }
+        }
+    }
 }
+
