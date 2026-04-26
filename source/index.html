@@ -1,45 +1,97 @@
 <!DOCTYPE html>
-<html>
-    <meta charset="UTF-8">
+<html lang="ko">
 <head>
-    <title>U15서버</title>
+    <meta charset="UTF-8">
+    <title>POD서버</title>
     <style>
-        #top_bar{
-            width:auto; height: 40px;
+        #top_bar {
+            height: 40px;
             line-height: 40px;
-            text-align:center; word-spacing:45px;
-            background: #85858532;}    
-        .container{width:630px; margin: 100px auto 0;}
-        #back{position: absolute; top:40px; right:0;}
-        .all{margin: 0 auto; width: 1000px;} 
-        ul{overflow:hidden;}
-        li{list-style: none; float:left; padding:20px; width:150px; font-size: 25px;}
-        li:first-child{border-radius: 10px 0 0 10px;}
-        li:last-child{border-radius: 0 10px 10px 0;}
-        li:nth-child(2n){background-color: rgb(173, 222, 238);}
-        li:nth-child(2n+1){background-color:rgb(165, 208, 245);;}
-        #center{margin: 0 auto; width:1850px;}
+            text-align: center;
+            word-spacing: 40px;
+            background-color: #cccccc;
+        }
+
+        .menu {
+            width: 1000px;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        li {
+            display: inline-block;
+            width: 130px;
+            padding: 15px;
+            font-size: 20px;
+            background-color: rgb(165, 208, 245);
+            margin: 5px;
+            border-radius: 8px;
+        }
+
+        /* 개인 탭 콘텐츠 */
+        .personal-section {
+            width: 1000px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .personal-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .personal-items span {
+            display: inline-block;
+            margin: 10px 15px;
+            padding: 10px 15px;
+            background: #e6f2ff;
+            border-radius: 6px;
+        }
+
+        .media {
+            text-align: center;
+            margin-top: 30px;
+        }
     </style>
 </head>
-<body>
-    <body bgcolor="yellow">
-    <div id="top_bar"> 개인 ㅣ 기업 ㅣ 금융상품 ㅣ 자산관리 ㅣ 퇴직연금  ㅣ카드 </div>
-    <div class="pics">
-        <div id="back"><img src="test3.png"></div>
+
+<body bgcolor="blue">
+
+    <!-- 상단 메뉴 -->
+    <div id="top_bar">
+        개인 ㅣ 기업 ㅣ 금융상품 ㅣ 자산관리 ㅣ 퇴직연금 ㅣ 카드
     </div>
-    <div class="all">
-        <ul>
-            <li>&nbsp; 조회</li>
-            <li>&nbsp; 이체 </li>
-            <li>&nbsp; 공과금 </li>
-            <li>&nbsp; 금융상품</li>
-            <li>&nbsp; 대출 </li>
-            <li>&nbsp; 외환 </li>
-            <li>&nbsp; 뱅킹관리 </li>
-        </ul>
-        <br>
-     </div>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rj7xMBxd5iY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-<img width="1000" src="https://mblogthumb-phinf.pstatic.net/20120416_141/hrwyfgd_1334540205911hNGUU_JPEG/%B0%ED%C8%AD%C1%FA%C4%C4%C7%BB%C5%CD%B9%D9%C5%C1%C8%AD%B8%E921.jpg?type=w2">
+
+    <!-- 개인 탭 선택 시 콘텐츠 -->
+    <div class="personal-section">
+        <div class="personal-title">개인 뱅킹 서비스</div>
+        <div class="personal-items">
+            <span>계좌조회</span>
+            <span>계좌이체</span>
+            <span>자동이체 관리</span>
+            <span>공과금 납부</span>
+            <span>카드 이용내역</span>
+            <span>대출 조회</span>
+        </div>
+    </div>
+
+    <!-- 미디어 -->
+    <div class="media">
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/rj7xMBxd5iY"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+        <br><br>
+        <img width="800"
+            src="https://mblogthumb-phinf.pstatic.net/20120416_141/hrwyfgd_1334540205911hNGUU_JPEG/%B0%ED%C8%AD%C1%FA%C4%C4%C7%BB%C5%CD%B9%D9%C5%C1%C8%AD%B8%E921.jpg?type=w2">
+    </div>
+
 </body>
 </html>
